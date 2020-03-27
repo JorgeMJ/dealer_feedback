@@ -9,7 +9,12 @@
 </head>
 <body>
 	<div class="container">
+		<img src="../static/logo.png" alt="Lexus" class="logo">
 		<h1>List of Comments</h1>
+
+		{% for c in comments %}
+			<p style="border-bottom:1px solid gray;">Dealer: <b>{{c.dealer}}</b> - (Rating: <b>{{c.rating}}</b>) : {{c.comments}}</p>
+		{% endfor %}
 	</div>
 	
 </body>

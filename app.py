@@ -55,7 +55,7 @@ def index():
 	return render_template('index.html')
 
 #Handle the submition of the form (in index.html '<form>' has the action 'submit' via the method 'POST')
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['POST', 'GET'])
 def submit():
 	#Makes sure this action append under the POST request
 	if request.method == 'POST':
@@ -69,7 +69,6 @@ def submit():
 			#Creates and renders 'message'. 
 			return render_template('index.html', message = '***Please enter the required fields.***')
 		
-
 		#Checks the same customer doesn't submit more than one feddback.
 		if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
 			data = Feedback(customer, dealer, rating, comments)
@@ -78,6 +77,11 @@ def submit():
 			send_mail(customer, dealer, rating, comments)
 			return render_template('success.html')
 		return render_template('index.html', message = 'You have already submitted feedback.')
+
+	elif request.method == 'GET':
+		listComments = Feedback.query.all()
+		return render_template('list_comments.html', comments = listComments)
+
 if __name__ == "__main__":
 	#Run server
 	app.run()

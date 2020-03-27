@@ -31,6 +31,8 @@ FILE STRUCTURE:
         |     +----index.html
         |     |
         |     +----success.html
+        |     |
+        |     +----list_comments.html
         |
         +----.gitignore               
         |
@@ -52,16 +54,17 @@ FILE STRUCTURE:
 
 FILES:
 
-* index.html >        Main page and holds the form.
-* success.html >      Redirects here if the form has been submitted correctly. 
-* app.py > The app itself. Establishes the database, table, server, form.
-* send_mail.py >      Module that contains the send_mail() function.
-* .gitignore >        Lists of files Git should ignore.
-* Pipfile >          Specify the packages requirements.
-* Pipfile.lock >     Specify the version of the required packages.
-* Procfile >         Declares how the app must be run (uses gunicorn to deploy in heroku)
-* requirements.txt > Specify the dependencies needed.
-* runtime.txt >      Secifies what Python version is needed.
+* index.html >         Main page and holds the form.
+* success.html >       Redirects here if the form has been submitted correctly. 
+* list_comments.html > Displays all the comments.
+* app.py >             The app itself. Establishes the database, table, server, form.
+* send_mail.py >       Module that contains the send_mail() function.
+* .gitignore >         Lists of files Git should ignore.
+* Pipfile >            Specify the packages requirements.
+* Pipfile.lock >       Specify the version of the required packages.
+* Procfile >           Declares how the app must be run (uses gunicorn to deploy in heroku)
+* requirements.txt >   Specify the dependencies needed.
+* runtime.txt >        Secifies what Python version is needed.
 
 RUNNING:
 

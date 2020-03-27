@@ -7,7 +7,8 @@ from send_mail import send_mail
 app = Flask(__name__)
 
 #Define DB localion (URI). TO Conect to the DB
-ENV = 'prod'
+#ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
 	#We work on DEVELOPMENT database
